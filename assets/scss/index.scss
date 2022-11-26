@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+// Custon theme bootstrap
+$font-family-sans-serif: 'Montserrat', sans-serif;
+
+// Importa Bootstrap completo
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+@import '~bootstrap-vue/src/icons.scss';
+
+:root {
+  --yellow: #fed616;
+  --blue: #4bd4fe;
+  --pink: #fe99d3;
+}
