@@ -13,7 +13,7 @@
         <b-img fluid src="~/assets/img/capa/triangulo.png" />
       </div>
       <section>
-        <NuxtLink to="/Sections">
+        <NuxtLink to="/sessoes">
           <div
             class="abra-sua-mente d-flex justify-content-center align-items-center flex-column position-relative"
           >
@@ -31,18 +31,17 @@
       </div>
     </b-row>
     <b-row class="p-0 m-0 d-flex justify-content-between align-items-center">
-      <div>
-        <b-img
-          v-if="$screen.lg"
-          class="raio"
-          fluid
-          src="~/assets/img/capa/raio.svg"
-        />
-        <!-- comentário -->
-      </div>
-      <div class="feminismo mr-5">
-        <b-img fluid src="~/assets/img/capa/feminismo-capa.png" />
-      </div>
+      <b-img
+        v-if="$screen.lg"
+        class="raio"
+        fluid
+        src="~/assets/img/capa/raio.svg"
+      />
+      <b-img
+        fluid
+        src="~/assets/img/capa/feminismo-capa.png"
+        class="feminismo"
+      />
     </b-row>
   </b-container>
 </template>
@@ -75,8 +74,8 @@ export default {
     animation: logo-animation 2s infinite;
   }
   .feminismo {
-    max-width: 110px;
-    background: black;
+    margin-right: 100px;
+    max-height: 150px;
     border-radius: 100%;
   }
   @keyframes logo-animation {
