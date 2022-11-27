@@ -61,6 +61,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
+  z-index: 10 !important ;
   .triangulo-preto {
     animation: triangle 3s linear;
   }

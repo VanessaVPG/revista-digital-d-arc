@@ -154,6 +154,8 @@ export default {
     '~plugins/helpers.js',
     '~plugins/vue-the-mask.js',
     { src: '~/plugins/vue-screen.client.js', mode: 'client' },
+
+    { src: '@/plugins/particles', ssr: false },
   ],
 
   render: {
