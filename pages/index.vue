@@ -37,11 +37,6 @@
         fluid
         src="~/assets/img/capa/raio.svg"
       />
-      <b-img
-        fluid
-        src="~/assets/img/capa/feminismo-capa.png"
-        class="feminismo"
-      />
     </b-row>
   </b-container>
 </template>
