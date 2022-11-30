@@ -1,28 +1,199 @@
 <template>
   <b-container>
-    <b-row class="bg">
-      <div class="voce-sabia"></div>
-      <div class="menu-mulheres"></div>
-      <div class="linha-do-tempo"></div>
-      <div class="jogo"></div>
+    <b-row class="d-flex justify-content-between"
+      ><b-img
+        fluid
+        class="vamos-viajar"
+        src="~/assets/img/menu/vamos-viajar.png" />
+      <b-img v-if="$screen.md" fluid src="~/assets/img/menu/logo-menu.png"
+    /></b-row>
+    <b-navbar class="bg mx-auto">
+      <b-nav-item class="menu-mulheres"
+        >MULHERES<br /><span>IMPORTANTES</span></b-nav-item
+      >
+      <b-nav-item to="#voce-ja-viu" class="voce-ja-viu"
+        >VÔCE JÁ <br /><span>VIU?</span></b-nav-item
+      >
+      <b-nav-item class="linha-do-tempo"
+        >LINHA DO<br />
+        <span>TEMPO</span></b-nav-item
+      >
+      <b-nav-item class="jogo">JOGO & <br /><span>MUNDO</span></b-nav-item>
+    </b-navbar>
+    <b-row class="w-100 d-flex justify-content-between align-items-center">
+      <Button />
+      <div>
+        <b-img
+          fluid
+          class="star mr-5"
+          src="~/assets/img/capa/estrela-capa-3.png"
+        ></b-img
+        ><b-img
+          fluid
+          class="star"
+          src="~/assets/img/capa/estrela-capa-2.png"
+        ></b-img>
+      </div>
     </b-row>
   </b-container>
 </template>
-
 <script>
+import Button from './layout/Button.vue';
 export default {
   name: 'Menu',
+  components: { Button },
 };
 </script>
 
 <style lang="scss" scoped>
-.bg {
-  background: url(~/assets/img/menu/vamos-viajar-bg.png);
+@media screen and (max-width: 768px) {
+  .bg {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
 }
-.voce-sabia {
-  width: 100px;
-  height: 100px;
+@keyframes uhul {
+  0% {
+    transform: translateX(-1000px);
+  }
+  50% {
+    transform: translateX(-10px);
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: translateX(-5px);
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes star-bright {
+  0% {
+    scale: 100%;
+    opacity: 0.5;
+  }
+  25% {
+    scale: 125%;
+    opacity: 0.7;
+  }
+  50% {
+    scale: 150%;
+    opacity: 0.8;
+  }
+  70% {
+    scale: 125%;
+    opacity: 1;
+  }
+  100% {
+    scale: 100%;
+    opacity: 0.7;
+  }
+}
+.bg {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 82px;
+  max-width: 948.21px;
+  max-height: 360.34px;
+  height: 360.34px;
+  background: url(~/assets/img/menu/vamos-viajar-bg.png);
+  background-size: contain;
+  background-position-x: center;
+  background-repeat: repeat-y;
+  margin-bottom: 21px;
+}
+.vamos-viajar {
+  animation: uhul 2s linear;
+}
+.star {
+  animation: star-bright 2s linear infinite;
+}
+.voce-ja-viu,
+.linha-do-tempo,
+.menu-mulheres,
+.jogo {
+  font-weight: 700;
+  width: 166.6px;
+  height: 166.6px;
   border-radius: 100%;
-  background: black;
+  a {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+
+    justify-content: center;
+  }
+  span {
+    font-weight: 400;
+  }
+}
+.voce-ja-viu {
+  background: var(--yellow-100);
+  position: relative;
+}
+.voce-ja-viu::before {
+  content: ' ';
+  position: absolute;
+  z-index: -1;
+  top: -8.94px;
+  right: -6.32px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px solid var(--yellow-100);
+}
+
+.linha-do-tempo {
+  background: var(--pink-100);
+  position: relative;
+}
+.linha-do-tempo::before {
+  content: ' ';
+  position: absolute;
+  z-index: -1;
+  bottom: -8.94px;
+  right: -6.32px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px solid var(--pink-100);
+}
+
+.menu-mulheres {
+  position: relative;
+  background: var(--blue);
+}
+.menu-mulheres::before {
+  content: ' ';
+  position: absolute;
+  z-index: -1;
+  top: -8.94px;
+  left: -6.32px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px solid var(--blue);
+}
+
+.jogo {
+  position: relative;
+  background: var(--purple);
+}
+.jogo::before {
+  content: ' ';
+  position: absolute;
+  z-index: -1;
+  bottom: -8.94px;
+  right: -6.32px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px solid var(--purple);
 }
 </style>

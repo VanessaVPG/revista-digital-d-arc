@@ -3,22 +3,18 @@
     <section id="menu">
       <Menu />
     </section>
-    <section id="mulheres"></section>
-    <section id="voce-sabia"></section>
-    <section id="linha-do-tempo"></section>
-    <section id="jogo"></section>
+    <section id="mulheres">d</section>
+    <section id="voce-ja-viu">c</section>
+    <section id="linha-do-tempo">b</section>
+    <section id="jogo">a</section>
   </b-container>
 </template>
-
 <script>
 import Menu from '~/components/Menu.vue';
 export default {
   components: { Menu },
-  layout: '',
+  layout: 'defaut',
 };
 </script>
 
-<style lang="scss">
-#menu {
-}
-</style>
+<style lang="scss"></style>
