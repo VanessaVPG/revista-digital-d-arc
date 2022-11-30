@@ -1,5 +1,5 @@
 <template>
-  <b-container class="min-vh-100">
+  <b-container>
     <b-row class="w-100">
       <div class="triangulo-preto pt-5 px-3">
         <b-img fluid src="~/assets/img/capa/triangulo-preto-azul-capa.png" />
