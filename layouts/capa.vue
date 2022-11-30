@@ -1,5 +1,5 @@
 <template>
-  <div class="min-vh-100">
+  <div>
     <main class="hero-background">
       <client-only>
         <Particles
