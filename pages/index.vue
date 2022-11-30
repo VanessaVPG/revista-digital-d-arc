@@ -26,17 +26,15 @@
           </div>
         </NuxtLink>
       </section>
-      <div class="pt-5">
+      <div v-if="$screen.lg" class="pt-5">
         <b-img fluid src="~/assets/img/capa/estrela-capa-3.png" />
       </div>
     </b-row>
-    <b-row class="p-0 m-0 d-flex justify-content-between align-items-center">
-      <b-img
-        v-if="$screen.lg"
-        class="raio"
-        fluid
-        src="~/assets/img/capa/raio.svg"
-      />
+    <b-row
+      v-if="$screen.lg"
+      class="p-0 m-0 d-flex justify-content-between align-items-center"
+    >
+      <b-img class="raio" fluid src="~/assets/img/capa/raio.svg" />
     </b-row>
   </b-container>
 </template>
@@ -54,6 +52,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@media screen and(max-width: 768px) {
+  section {
+    margin: auto;
+  }
+}
 .container {
   z-index: 10 !important ;
   .triangulo-preto {

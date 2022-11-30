@@ -3,7 +3,7 @@
     <section id="menu">
       <Menu />
     </section>
-    <section id="mulheres">d</section>
+    <section id="mulheres"><mulheres /></section>
     <section id="voce-ja-viu">c</section>
     <section id="linha-do-tempo">b</section>
     <section id="jogo">a</section>
@@ -11,10 +11,15 @@
 </template>
 <script>
 import Menu from '~/components/Menu.vue';
+import Mulheres from '~/components/Mulheres.vue';
 export default {
-  components: { Menu },
+  components: { Menu, Mulheres },
   layout: 'defaut',
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#mulheres {
+  margin-top: 162px;
+}
+</style>

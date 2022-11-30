@@ -8,7 +8,7 @@
       <b-img v-if="$screen.md" fluid src="~/assets/img/menu/logo-menu.png"
     /></b-row>
     <b-navbar class="bg mx-auto">
-      <b-nav-item class="menu-mulheres"
+      <b-nav-item to="#mulheres" class="menu-mulheres"
         >MULHERES<br /><span>IMPORTANTES</span></b-nav-item
       >
       <b-nav-item to="#voce-ja-viu" class="voce-ja-viu"
@@ -18,7 +18,9 @@
         >LINHA DO<br />
         <span>TEMPO</span></b-nav-item
       >
-      <b-nav-item class="jogo">JOGO & <br /><span>MUNDO</span></b-nav-item>
+      <b-nav-item to="#jogo" class="jogo"
+        >JOGO & <br /><span>MUNDO</span></b-nav-item
+      >
     </b-navbar>
     <b-row class="w-100 d-flex justify-content-between align-items-center">
       <Button />
@@ -51,6 +53,80 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+  }
+  .voce-ja-viu,
+  .menu-mulheres,
+  .jogo,
+  .linha-do-tempo {
+    animation: none !important;
+  }
+}
+@keyframes voce-ja-viu {
+  0% {
+    transform: translateY(-100px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+@keyframes jogo {
+  0% {
+    transform: translateY(-100px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+@keyframes linha-do-tempo {
+  0% {
+    transform: translateY(100px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+@keyframes menu-mulheres {
+  0% {
+    transform: translateY(100px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100px);
   }
 }
 @keyframes uhul {
@@ -136,6 +212,7 @@ export default {
 .voce-ja-viu {
   background: var(--yellow-100);
   position: relative;
+  animation: voce-ja-viu 6s infinite linear;
 }
 .voce-ja-viu::before {
   content: ' ';
@@ -152,6 +229,7 @@ export default {
 .linha-do-tempo {
   background: var(--pink-100);
   position: relative;
+  animation: linha-do-tempo 6s infinite linear;
 }
 .linha-do-tempo::before {
   content: ' ';
@@ -168,6 +246,7 @@ export default {
 .menu-mulheres {
   position: relative;
   background: var(--blue);
+  animation: menu-mulheres 6s infinite linear;
 }
 .menu-mulheres::before {
   content: ' ';
@@ -184,6 +263,7 @@ export default {
 .jogo {
   position: relative;
   background: var(--purple);
+  animation: jogo 6s infinite linear;
 }
 .jogo::before {
   content: ' ';

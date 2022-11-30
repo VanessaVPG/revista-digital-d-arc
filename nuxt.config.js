@@ -132,8 +132,8 @@ export default {
         charset: 'utf-8',
       },
       {
-        src: "https://plugin.handtalk.me/web/latest/handtalk.min.js"
-      }
+        src: 'https://plugin.handtalk.me/web/latest/handtalk.min.js',
+      },
     ],
     noscript: [
       {
