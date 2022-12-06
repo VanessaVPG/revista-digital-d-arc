@@ -1,19 +1,19 @@
 <template>
   <b-navbar class="bg d-flex justify-content-around">
-    <b-nav-item to="#mulheres" id="menu-mulheres" class="menu-mulheres"
+    <b-nav-item id="menu-mulheres" to="#mulheres" class="menu-mulheres"
       >MULHERES<br /><span>IMPORTANTES</span></b-nav-item
     >
-    <b-nav-item to="#voce-ja-viu" id="menu-voce-ja-viu" class="voce-ja-viu"
+    <b-nav-item id="menu-voce-ja-viu" to="#voce-ja-viu" class="voce-ja-viu"
       >VÔCE JÁ <br /><span>VIU?</span></b-nav-item
     >
     <b-nav-item
-      to="#linha-do-tempo"
       id="menu-linha-do-tempo"
+      to="#linha-do-tempo"
       class="linha-do-tempo"
       >LINHA DO<br />
       <span>TEMPO</span></b-nav-item
     >
-    <b-nav-item to="#jogo" id="menu-jogo" class="jogo"
+    <b-nav-item id="menu-jogo" to="#jogo" class="jogo"
       >JOGO & <br /><span>MUNDO</span></b-nav-item
     >
   </b-navbar>
@@ -127,10 +127,33 @@ export default {};
   border-radius: 100%;
   border: 3px solid var(--purple);
 }
-a.nav-link.nuxt-link-exact-active.nuxt-link-active {
-  transform: translateY(2px);
-  background: #ffffff;
-  width: 100px;
-  height: 100px;
+#menu-mulheres a.nav-link.nuxt-link-exact-active.nuxt-link-active {
+  background: var(--blue);
+  scale: 150%;
+  animation: active-link 0.5s ease-out;
+}
+#menu-voce-ja-viu a.nav-link.nuxt-link-exact-active.nuxt-link-active {
+  background: var(--yellow-100);
+  scale: 150%;
+  animation: active-link 0.5s ease-out;
+}
+#menu-linha-do-tempo a.nav-link.nuxt-link-exact-active.nuxt-link-active {
+  background: var(--pink-100);
+  scale: 150%;
+  animation: active-link 0.5s ease-out;
+}
+#menu-jogo a.nav-link.nuxt-link-exact-active.nuxt-link-active {
+  background: var(--purple);
+  scale: 150%;
+  animation: active-link 0.5s ease-out;
+}
+
+@keyframes active-link {
+  from {
+    scale: 100%;
+  }
+  to {
+    scale: 153%;
+  }
 }
 </style>

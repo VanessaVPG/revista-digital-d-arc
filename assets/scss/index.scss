@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('node_modules/@egjs/vue-flicking/dist/flicking.css');
 
 // Custon theme bootstrap
 $font-family-sans-serif: 'Montserrat', sans-serif;
@@ -17,9 +18,11 @@ $font-family-sans-serif: 'Montserrat', sans-serif;
   --pink: #fe99d3;
   --pink-100: #f7134d;
 }
+
 body {
   background: #0c0b0d;
 }
+
 ul,
 li {
   list-style: none;
