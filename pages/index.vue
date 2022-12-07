@@ -15,10 +15,17 @@
       <section>
         <NuxtLink to="/sessoes">
           <div
-            class="abra-sua-mente d-flex justify-content-center align-items-center flex-column position-relative"
+            class="
+              abra-sua-mente
+              d-flex
+              justify-content-center
+              align-items-center
+              flex-column
+              position-relative
+            "
           >
             <h1 class="text-center">
-              ABRA SUA MENTE<span class="pisca">|</span>
+              ABRA SUA MENTE<span class="pisca">| </span>
             </h1>
             <div class="abra-sua-mente-sombra2 position-relative">
               <div class="abra-sua-mente-sombra1 position-relative"></div>

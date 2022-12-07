@@ -24,13 +24,13 @@ export default {
   },
 
   env: {
-    title: 'bossa',
-    description: 'bossa',
+    title: 'Digital',
+    description: 'Digital',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'TITLE',
+    title: 'Revista DARC',
     description: 'DESCRIPTION',
     htmlAttrs: {
       lang: 'pt_br',
