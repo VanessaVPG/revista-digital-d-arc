@@ -4,9 +4,9 @@
       <Menu />
     </section>
     <section id="mulheres"><mulheres /></section>
-    <section id="voce-ja-viu">c</section>
-    <section id="linha-do-tempo">b</section>
-    <section id="jogo">a</section>
+    <section id="voce-ja-viu" class="mt-5"><voce-ja-viu /></section>
+    <section id="linha-do-tempo" class="mt-5">b</section>
+    <section id="jogo" class="mt-5">a</section>
   </b-container>
 </template>
 <script>

@@ -12,7 +12,7 @@
         >MULHERES<br /><span>IMPORTANTES</span></b-nav-item
       >
       <b-nav-item to="#voce-ja-viu" class="voce-ja-viu"
-        >VÔCE JÁ <br /><span>VIU?</span></b-nav-item
+        >VOCÊ JÁ <br /><span>VIU?</span></b-nav-item
       >
       <b-nav-item class="linha-do-tempo"
         >LINHA DO<br />
@@ -24,26 +24,16 @@
     </b-navbar>
     <b-row class="w-100 d-flex justify-content-between align-items-center">
       <Button />
-      <div>
-        <b-img
-          fluid
-          class="star mr-5"
-          src="~/assets/img/capa/estrela-capa-3.png"
-        ></b-img
-        ><b-img
-          fluid
-          class="star"
-          src="~/assets/img/capa/estrela-capa-2.png"
-        ></b-img>
-      </div>
+      <star-bright />
     </b-row>
   </b-container>
 </template>
 <script>
 import Button from './layout/Button.vue';
+import StarBright from './layout/StarBright.vue';
 export default {
   name: 'Menu',
-  components: { Button },
+  components: { Button, StarBright },
 };
 </script>
 
@@ -258,6 +248,26 @@ export default {
   height: 100%;
   border-radius: 100%;
   border: 3px solid var(--blue);
+}
+.menu-mulheres:hover::before,
+.jogo:hover::before,
+.linha-do-tempo:hover::before,
+.voce-ja-viu:hover::before {
+  animation: hover-effect 0.5s linear;
+}
+@keyframes hover-effect {
+  0% {
+    transform: translateX(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    scale: 140%;
+    transform: translateX(6.97px);
+    transform: translateY(8.32px);
+  }
+  100% {
+    scale: 100%;
+  }
 }
 
 .jogo {
