@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .hero-background {
-  height: 100vh !important;
+  height: 100% !important;
   width: 100vw !important;
   position: fixed !important;
   top: 0 !important;
@@ -46,7 +46,7 @@ export default {
   z-index: 1 !important;
 }
 div[id^='particles-instance-'] {
-  height: 100vh !important;
+  height: 100% !important;
   width: 100vw !important;
   position: fixed !important;
   top: 0 !important;

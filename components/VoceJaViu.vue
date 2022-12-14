@@ -38,12 +38,13 @@
           <p>{{ content.text }}</p>
         </div>
         <div class="w-50 imagem-video">
-          <b-img fluid v-if="image" :src="content.image" />
+          <b-img v-if="image" fluid :src="content.image" />
           <iframe
+            v-if="!image"
+            style="border-radius: 12px"
             color="black"
             width="100%"
             height="100%"
-            v-if="!image"
             :src="`https://www.youtube.com/embed/${content.video}`"
             :title="content.title"
             frameborder="0"
@@ -58,9 +59,51 @@
     </Flicking>
     <Button class="mt-5" />
     <section class="mulheres-inspiram">
-      <div class="background-musicas">
-        <h2>Músicas Delas</h2>
+      <div class="interprete-musicas d-flex justify-content-end">
+        <b-img fluid src="~/assets/img/voce-ja-viu/interprete.png" />
       </div>
+      <div class="background-musicas">
+        <div style="max-width: 600px; margin-inline: auto" class="pb-5">
+          <div
+            class="elemento-musicas d-flex align-self-center justify-content-end mb-5"
+          >
+            <svg
+              width="127"
+              height="118"
+              viewBox="0 0 127 118"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M40.9705 74.1327L1.18694 64.2874L29.6262 34.7972L58.3007 5.11504L69.6234 44.6641L80.9461 84.2133L40.9705 74.1327Z"
+                fill="#0E100D"
+              />
+              <path
+                d="M78.529 108.134L38.767 98.0755L67.2063 68.5853L95.8592 39.1167L107.203 78.4522L118.526 118.001L78.529 108.134Z"
+                fill="#4BD4FE"
+              />
+              <path
+                d="M112.316 113.275L26.2362 91.8471L87.9258 27.959L112.316 113.275ZM70.1878 98.8773L106.811 107.972L85.8891 35.3047L33.3512 89.7612L70.1878 98.8773Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="musicas-delas">
+            <b-img fluid src="~/assets/img/voce-ja-viu/musicas-delas.svg" />
+          </div>
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/playlist/0F3K3GsErK9hNB83gXRMzx?utm_source=generator&theme=0"
+            width="100%"
+            height="380"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            class="spot"
+          ></iframe>
+        </div>
+      </div>
+      <Button class="mt-5" />
     </section>
   </b-container>
 </template>
@@ -149,6 +192,15 @@ export default {
   h1 {
     font-size: 1.5rem;
   }
+  .voce-ja-viu-carousel {
+    flex-direction: column;
+    max-height: 1000px;
+  }
+  .text,
+  .imagem-video {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }
 .voce-ja-viu-carousel {
   border-radius: 10px;
@@ -176,12 +228,42 @@ section .mulheres-inspiram {
   background: url('~/assets/img/voce-ja-viu/background-artistas.svg');
   background-position: center;
   background-size: cover;
-  height: 1000px;
   background-repeat: no-repeat;
 }
 section .mulheres-inspiram .background-musicas,
-h2 {
+.musicas-delas {
   margin-bottom: 1rem;
+}
+.musicas-delas {
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  justify-content: flex-end;
+}
+.musicas-delas img {
+  max-width: 300px;
+}
+.interprete-musicas {
+  margin-bottom: 30px;
+}
+.elemento-musicas svg :hover {
+  fill: var(--purple);
+}
+.elemento-musicas {
+  rotate: 10deg;
+  animation: element 3s infinite linear;
+}
+@keyframes element {
+  0% {
+    transform: rotateX(30deg);
+  }
+  50% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(30deg);
+  }
 }
 p {
   width: 100%;
@@ -198,6 +280,17 @@ p {
 }
 .pipoca-seta {
   max-width: 993px;
+}
+.spot {
+  position: relative;
+}
+.spot::before {
+  width: 600px;
+  height: 380px;
+  position: absolute;
+  background: black;
+  border-radius: 12px;
+  content: '';
 }
 .seta {
   transform: translateY(-100px);
