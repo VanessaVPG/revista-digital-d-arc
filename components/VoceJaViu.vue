@@ -105,14 +105,85 @@
       </div>
       <Button class="mt-5" />
     </section>
+    <section class="artistas my-5 py-5">
+      <b-row class="justify-content-center">
+        <StarBright />
+        <h2>Artistas que inspiram</h2>
+        <b-img fluid src="~/assets/img/voce-ja-viu/bandeiras-artistas.svg" />
+      </b-row>
+      <Flicking
+        :options="{ circular: true, horizontal: false }"
+        :plugins="autoplay"
+        class="d-flex justify-content-center container-artistas"
+      >
+        <div
+          v-for="artista in artistas"
+          :key="artista.id"
+          class="carousel-artistas"
+        >
+          <h3>{{ artista.name }}</h3>
+          <div class="d-flex justify-content-around">
+            <div class="arte">
+              <b-img :src="artista.arte" />
+            </div>
+            <div class="pessoa-artista">
+              <b-img :src="artista.pessoa" />
+            </div>
+          </div>
+        </div>
+      </Flicking>
+      <Button class="my-5" />
+    </section>
+    <section class="escritoras">
+      <div
+        class="elemento-escritoras d-flex align-self-center justify-content-center mb-5"
+      >
+        <svg
+          width="127"
+          height="118"
+          viewBox="0 0 127 118"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M40.9705 74.1327L1.18694 64.2874L29.6262 34.7972L58.3007 5.11504L69.6234 44.6641L80.9461 84.2133L40.9705 74.1327Z"
+            fill="#0E100D"
+          />
+          <path
+            d="M78.529 108.134L38.767 98.0755L67.2063 68.5853L95.8592 39.1167L107.203 78.4522L118.526 118.001L78.529 108.134Z"
+            fill="#4BD4FE"
+          />
+          <path
+            d="M112.316 113.275L26.2362 91.8471L87.9258 27.959L112.316 113.275ZM70.1878 98.8773L106.811 107.972L85.8891 35.3047L33.3512 89.7612L70.1878 98.8773Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+      <b-row class="d-flex justify-content-around w-50">
+        <StarBright />
+        <h2>Escritoras Extraordinárias</h2>
+        <b-img src="~/assets/img/voce-ja-viu/elemento-filmes-tracos.svg" />
+      </b-row>
+      <Flicking
+        :options="{
+          circular: true,
+          horizontal: true,
+          useFractionalSize: true,
+        }"
+      >
+        <div class="livro shadow my-5"></div>
+      </Flicking>
+      <Button class="mt-5" />
+    </section>
   </b-container>
 </template>
 <script>
-import { Arrow } from '@egjs/flicking-plugins';
+import { Arrow, AutoPlay } from '@egjs/flicking-plugins';
 import '@egjs/flicking-plugins/dist/flicking-plugins.css';
 import { Flicking } from '@egjs/vue-flicking';
 import '@egjs/flicking-plugins/dist/arrow.css';
 import '@egjs/vue-flicking/dist/flicking.css';
+
 import StarBright from './layout/StarBright.vue';
 export default {
   components: { StarBright, Flicking },
@@ -120,6 +191,7 @@ export default {
     return {
       image: false,
       plugins: [new Arrow()],
+      autoplay: [new AutoPlay()],
       contents: [
         {
           title: 'Radioativo',
@@ -180,6 +252,23 @@ export default {
           text: 'Mary é uma aspirante a escritora de 16 anos que conhece e se apaixona pelo poeta Percy Bysshe Shelley, de 21 anos, durante uma viagem à Escócia. Quando ele viaja para Londres para conhecer o pai de Mary, eles começam um romance tórrido, apesar da oposição de seu pai. Os dois fogem juntos e viram hóspedes do também poeta Lord Byron, que os desafia a escrever uma história de terror. Assim, Mary escreve "Frankenstein".',
           image: require('~/assets/img/voce-ja-viu/radioativo.jpg'),
           video: 'T-WGaZaojFc',
+        },
+      ],
+      artistas: [
+        {
+          pessoa: require('~/assets/img/voce-ja-viu/julia-artista.jpeg'),
+          arte: require('~/assets/img/voce-ja-viu/julia-arte.jpeg'),
+          name: 'Júlia Leandro Lopes',
+        },
+        {
+          pessoa: require('~/assets/img/voce-ja-viu/criola-artista.jpeg'),
+          arte: require('~/assets/img/voce-ja-viu/criola.jpeg'),
+          name: 'Tainá Lima (Criola)',
+        },
+        {
+          pessoa: require('~/assets/img/voce-ja-viu/tarsila-artista.jpeg'),
+          arte: require('~/assets/img/voce-ja-viu/tarsila-arte.jpeg'),
+          name: 'Tarsila do Amaral',
         },
       ],
     };
@@ -323,5 +412,101 @@ h1 {
 }
 .pipoca {
   transform: translateY(-40px);
+}
+.artistas {
+  background: url('~/assets/img/voce-ja-viu/bg-artistas.svg');
+}
+.artistas {
+  h2 {
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    width: 250px;
+    font-weight: 900;
+  }
+  .arte,
+  .pessoa-artista {
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+  .arte::before {
+    content: '';
+    width: 400px;
+    height: 400px;
+    background: var(--pink-100);
+    border-radius: 100%;
+    left: -15px;
+    top: -15px;
+    position: absolute;
+    z-index: -1;
+  }
+  .pessoa-artista::before {
+    content: '';
+    width: 400px;
+    height: 400px;
+    background: var(--yellow-100);
+    border-radius: 100%;
+    right: -15px;
+    top: -15px;
+    position: absolute;
+    z-index: -1;
+  }
+  .pessoa-artista::after {
+    content: url('~/assets/img/voce-ja-viu/tracinho-artistas.svg');
+    position: absolute;
+    max-width: 60px;
+  }
+  .arte img,
+  .pessoa-artista img {
+    border-radius: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-artistas {
+    height: 100%;
+  }
+  .container-artistas {
+    max-height: 430px;
+    margin-block: 50px;
+  }
+  .carousel-artistas {
+    h3 {
+      color: white;
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 600;
+    }
+  }
+}
+section .escritoras {
+  background: url('~/assets/img/voce-ja-viu/escritoras-bg.svg');
+  .elemento-escritoras {
+    transform: translateY(10deg);
+    animation: element 3s infinite linear;
+  }
+  @keyframes element {
+    0% {
+      transform: rotateX(30deg);
+    }
+    50% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(30deg);
+    }
+  }
+  h2 {
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    width: 250px;
+    font-weight: 900;
+  }
+}
+.livro {
+  width: 400px;
+  height: 300px;
+  border-radius: 12px;
+  background: white;
 }
 </style>
