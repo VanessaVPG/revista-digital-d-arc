@@ -155,4 +155,9 @@ export default {
 .tabs {
   background: var(--yellow-100) !important;
 }
+@media screen and (max-width: 991px) {
+  .tabs {
+    height: 800px !important;
+  }
+}
 </style>
