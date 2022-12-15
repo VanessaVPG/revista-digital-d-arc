@@ -5,7 +5,7 @@
       <MenuNavigation />
     </b-row>
     <div>
-      <b-card no-body>
+      <b-card no-body class="overflow-auto">
         <b-tabs card>
           <b-tab
             v-for="table in tables"
@@ -26,6 +26,7 @@
         </b-tabs>
       </b-card>
     </div>
+    <Button class="mt-5" />
   </b-container>
 </template>
 
@@ -115,7 +116,7 @@ export default {
           year: '1918',
           title: '1918: Maria Lacerda de Moura publica Em Torno da Educação',
           text: 'O livro também entra na lista de obras importantes que marcam o começo do feminismo brasileiro. Nele, Maria Lacerda defende o processo educacional na libertação feminina e reforça que a instrução é um fator indispensável na transformação da vida das mulheres.',
-          imagem: require('~/assets/img/linha-do-tempo/1871.jpg'),
+          imagem: require('~/assets/img/linha-do-tempo/1918.jpg'),
           bg: '#f7134d',
         },
         {
@@ -132,6 +133,20 @@ export default {
           text: 'A primeira partida de futebol feminino aconteceu em 1921, entre mulheres dos bairros de Tremembé e Cantareira, na zona norte de São Paulo. O jogo chegou a ser noticiado por jornais impressos da época como uma coisa “curiosa e cômica”. O primeiro time só surgiu em 1958, com o nome de Araguari Atlético Clube, em Minas Gerais.',
           imagem: require('~/assets/img/linha-do-tempo/1921.jpg'),
           background: '#7b07d6',
+        },
+        {
+          year: '1923',
+          title: '1923: A enfermagem começa no Brasil',
+          text: 'A Escola de Enfermagem Ana Nery foi a primeira escola oficial de enfermagem no país, nomeada em homenagem a Anna Nery, pioneira da enfermagem brasileira. Anna Justina Ferreira Nery: morreu aos 65 anos depois de dedicar sua vida a cuidar das pessoas e lutar pela educação feminina. Uma curiosidade sobre ela é que, em 2009, ela se tornou a primeira mulher a entrar para o Livro dos Heróis e das Heroínas da Pátria.',
+          imagem: require('~/assets/img/linha-do-tempo/1923.jpg'),
+          bg: '#f7134d',
+        },
+        {
+          year: '1928',
+          title: '1928: Primeira prefeita brasileira é eleita',
+          text: 'Quando ainda nem existia o voto feminino, Alzira Soriano de Souza abriu espaço para as mulheres na política. Ela foi a primeira mulher a assumir o governo de uma cidade não apenas no Brasil, mas na América Latina inteira. O cargo dela era de prefeita.  Maria Luiza Fontenele: primeira prefeita de uma capital brasileira, em Fortaleza. Iolanda Fleming: primeira governadora, no Acre. Luiza Erundina, primeira prefeita da maior cidade do Brasil, São Paulo. Dilma Rousseff, primeira presidente do país.',
+          imagem: require('~/assets/img/linha-do-tempo/1928.png'),
+          bg: '#ffd310',
         },
       ],
     };
