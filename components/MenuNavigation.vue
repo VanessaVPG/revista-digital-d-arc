@@ -55,6 +55,7 @@ export default {};
     color: #000000;
     font-size: 0.5rem;
     justify-content: center;
+    scroll-behavior: smooth;
   }
   span {
     font-weight: 400;

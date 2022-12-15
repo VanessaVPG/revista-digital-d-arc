@@ -159,30 +159,52 @@
           />
         </svg>
       </div>
-      <b-row class="d-flex justify-content-around w-50">
+      <div class="escritoras-title d-flex justify-content-center w-50">
         <StarBright />
         <h2>Escritoras Extraordinárias</h2>
         <b-img src="~/assets/img/voce-ja-viu/elemento-filmes-tracos.svg" />
-      </b-row>
+      </div>
       <Flicking
         :options="{
           circular: true,
           horizontal: true,
           useFractionalSize: true,
+          align: 'center',
+          duration: 2000,
         }"
+        :plugins="persp"
+        class="fli"
       >
-        <div class="livro shadow my-5"></div>
+        <div
+          v-for="livro in livros"
+          :key="livro.id"
+          class="livro shadow my-5 d-flex flex-column justify-content-center align-content-center"
+        >
+          <h3 class="text-center mb-3">{{ livro.autora }}</h3>
+          <div class="d-flex align-items-center justify-content-around">
+            <div class="livro-capa"><b-img :src="livro.capa" /></div>
+            <span class="borda"></span>
+            <div class="livro-autora"><b-img :src="livro.foto" /></div>
+          </div>
+        </div>
+        <div slot="viewport" class="flicking-pagination"></div>
       </Flicking>
       <Button class="mt-5" />
     </section>
   </b-container>
 </template>
 <script>
-import { Arrow, AutoPlay } from '@egjs/flicking-plugins';
+import {
+  Arrow,
+  AutoPlay,
+  Pagination,
+  Perspective,
+} from '@egjs/flicking-plugins';
 import '@egjs/flicking-plugins/dist/flicking-plugins.css';
 import { Flicking } from '@egjs/vue-flicking';
 import '@egjs/flicking-plugins/dist/arrow.css';
 import '@egjs/vue-flicking/dist/flicking.css';
+import '@egjs/flicking-plugins/dist/pagination.css';
 
 import StarBright from './layout/StarBright.vue';
 export default {
@@ -192,6 +214,12 @@ export default {
       image: false,
       plugins: [new Arrow()],
       autoplay: [new AutoPlay()],
+      pagination: [new Pagination({ type: 'bullet' })],
+      persp: [
+        new Perspective({ rotate: 0.2 }),
+        new AutoPlay(),
+        new Pagination({ type: 'bullet' }),
+      ],
       contents: [
         {
           title: 'Radioativo',
@@ -271,6 +299,28 @@ export default {
           name: 'Tarsila do Amaral',
         },
       ],
+      livros: [
+        {
+          autora: 'Carolina Maria de Jesus',
+          capa: require('~/assets/img/voce-ja-viu/carolina-livro.jpg'),
+          foto: require('~/assets/img/voce-ja-viu/carolina.jpeg'),
+        },
+        {
+          autora: 'Carol Rossetti',
+          capa: require('~/assets/img/voce-ja-viu/carol-livro.jpg'),
+          foto: require('~/assets/img/voce-ja-viu/carol.jpeg'),
+        },
+        {
+          autora: 'Malala Yousafzai',
+          capa: require('~/assets/img/voce-ja-viu/malala-livro.jpg'),
+          foto: require('~/assets/img/voce-ja-viu/malala.jpeg'),
+        },
+        {
+          autora: 'Harper Lee',
+          capa: require('~/assets/img/voce-ja-viu/harper-livro.jpg'),
+          foto: require('~/assets/img/voce-ja-viu/harper.jpeg'),
+        },
+      ],
     };
   },
 };
@@ -288,6 +338,9 @@ export default {
   .text,
   .imagem-video {
     max-width: 100% !important;
+    width: 100% !important;
+  }
+  .escritoras .escritoras-title {
     width: 100% !important;
   }
 }
@@ -503,10 +556,50 @@ section .escritoras {
     font-weight: 900;
   }
 }
+.fli {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  margin-inline: auto;
+  background: var(--yellow-100);
+  max-width: 700px;
+  border-radius: 12px;
+}
+.flicking-pagination {
+  background: white;
+}
+.flicking-pagination-bullet-active {
+  background-color: black !important;
+}
+.borda {
+  border: 1px solid black;
+  width: 4px;
+  height: 100%;
+}
 .livro {
   width: 400px;
   height: 300px;
   border-radius: 12px;
   background: white;
+  color: black;
+  /* border-left: 15px solid var(--pink-100); */
+}
+.livro-capa {
+  width: 150px;
+  height: 200px;
+}
+.livro-autora {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+}
+.livro-autora img {
+  border-radius: 100px;
+  width: 100%;
+  height: 100%;
+}
+.livro-capa img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 </style>

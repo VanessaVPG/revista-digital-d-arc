@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="min-h-100">
     <b-row class="d-flex justify-content-between"
       ><b-img
         fluid

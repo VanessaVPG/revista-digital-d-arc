@@ -115,11 +115,6 @@ export default {
           text: 'Mais conhecida como Marielle Franco, foi uma vereadora brasileira assassinada aos 38 anos de idade, em uma emboscada no centro da capital fluminense, no dia 14 de março de 2018. Socióloga e ativista de direitos humanos, foi presidente da Comissão da Mulher na Câmara do Rio de Janeiro e fazia parte da comissão que investigava abusos das Forças Armadas e da polícia durante a intervenção federal na área da Segurança Pública do Estado.',
         },
         {
-          title: 'COCO CHANEL',
-          photo: require('~/assets/img/mulheres/chanel.png'),
-          text: 'Nos anos 1920, a revolucionária estilista francesa, Gabrielle Bonheur Chanel, transformou a moda, trocando os espartilhos e vestimentas pesadas e apertadas, por roupas confortáveis que traduziam a liberdade feminina, como por exemplo, a criação da primeira calça própria para mulheres. ',
-        },
-        {
           title: 'CLARICE LISPECTOR',
           photo: require('~/assets/img/mulheres/clarisse.jpg'),
           text: 'Tímida e ousada, caótica e intensa, são adjetivos que sempre estiveram presentes na vida e na obra de Clarice Lispector. Principal nome de uma tendência intimista na literatura brasileira, Clarice propôs uma viagem ao consciente individual: a experiência interior passa para o primeiro plano da criação literária, deixando em segundo plano o meio externo, o homem e sua condição social. Por isso, Clarice Lispector acabou se tornando uma uma lenda da literatura do século XX, uma das escritoras mais notáveis e importantes da literatura brasileira, não somente no Brasil, mas em toda a literatura ocidental.',

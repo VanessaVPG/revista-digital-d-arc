@@ -38,3 +38,21 @@ h5 {
   padding: 0;
   margin: 0;
 }
+
+#t___BV_tab_button__.nav-link.active {
+  background: var(--pink-100) !important;
+  border: 2px solid var(--pink-100);
+  color: white;
+  font-weight: 700;
+
+}
+
+#t___BV_tab_button__.nav-link {
+  color: white;
+  font-weight: 700;
+}
+
+#t {
+  height: 320px;
+  font-weight: 500;
+}
