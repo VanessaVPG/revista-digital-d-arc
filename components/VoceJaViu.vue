@@ -60,7 +60,17 @@
     <Button class="mt-5" />
     <section class="mulheres-inspiram">
       <div class="interprete-musicas d-flex justify-content-end">
-        <b-img fluid src="~/assets/img/voce-ja-viu/interprete.png" />
+        <!-- <b-img fluid src="~/assets/img/voce-ja-viu/interprete.png" /> -->
+        <iframe
+          width="300"
+          height="300"
+          src="https://www.youtube-nocookie.com/embed/YXccYLlzTtM?loop=1&playlist=YXccYLlzTtM"
+          title="Libras"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="border-radius: 100%"
+        ></iframe>
       </div>
       <div class="background-musicas">
         <div style="max-width: 600px; margin-inline: auto" class="pb-5">
@@ -163,6 +173,18 @@
         <StarBright />
         <h2>Escritoras Extraordinárias</h2>
         <b-img src="~/assets/img/voce-ja-viu/elemento-filmes-tracos.svg" />
+      </div>
+      <div class="d-flex justify-content-end">
+        <iframe
+          width="300"
+          height="300"
+          src="https://www.youtube-nocookie.com/embed/YXccYLlzTtM?loop=1&playlist=YXccYLlzTtM"
+          title="Libras"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="border-radius: 100%; z-index: 1000"
+        ></iframe>
       </div>
       <Flicking
         :options="{
@@ -557,7 +579,8 @@ section .escritoras {
   }
 }
 .fli {
-  margin-top: 200px;
+  z-index: 0;
+  margin-top: 10px;
   margin-bottom: 100px;
   margin-inline: auto;
   background: var(--yellow-100);

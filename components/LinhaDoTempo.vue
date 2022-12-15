@@ -8,11 +8,11 @@
       <b-card no-body>
         <b-tabs card>
           <b-tab
-            id="t"
             v-for="table in tables"
+            id="t"
             :key="table.id"
             :title="table.year"
-            v-bind:style="background"
+            :style="background"
             active
           >
             <b-card-title class="text-center">{{ table.title }}</b-card-title>
@@ -154,8 +154,5 @@ export default {
 }
 .tabs {
   background: var(--yellow-100) !important;
-}
-#t___BV_tab_button__ {
-  background: var(--pink) !important;
 }
 </style>
