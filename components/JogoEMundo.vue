@@ -1,7 +1,11 @@
 <template>
   <b-container>
     <section id="jogo-e-mundo" class="mt-5" style="width: 100%; height: ">
-      <div class="d-flex justify-content-center">
+      <b-row class="d-flex justify-content-between">
+        <b-img v-if="$screen.md" fluid src="~/assets/img/menu/logo-menu.png" />
+        <MenuNavigation />
+      </b-row>
+      <div class="mt-5 d-flex justify-content-center">
         <a href="https://jogo-quiz-vanessavpg.vercel.app/">
           <b-img role="button" fluid src="~/assets/img/jogo/jogo.png" />
         </a>
