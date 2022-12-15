@@ -6,15 +6,16 @@
     <section id="mulheres"><mulheres /></section>
     <section id="voce-ja-viu" class="mt-5"><voce-ja-viu /></section>
     <section id="linha-do-tempo" class="mt-5"><linha-do-tempo /></section>
-    <section id="jogo" class="mt-5">a</section>
+    <section id="jogo" class="mt-5"><jogo-e-mundo /></section>
   </b-container>
 </template>
 <script>
+import JogoEMundo from '~/components/JogoEMundo.vue';
 import LinhaDoTempo from '~/components/LinhaDoTempo.vue';
 import Menu from '~/components/Menu.vue';
 import Mulheres from '~/components/Mulheres.vue';
 export default {
-  components: { Menu, Mulheres, LinhaDoTempo },
+  components: { Menu, Mulheres, LinhaDoTempo, JogoEMundo },
   layout: 'defaut',
 };
 </script>
